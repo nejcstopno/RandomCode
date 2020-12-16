@@ -1,0 +1,11 @@
+
+
+
+# Extract 2nd column containing the accessions
+< blastOutput.txt awk '{ print $2 }' > accessions.txt
+
+
+# Find protein names 
+blastdbcmd -db nr -dbtype prot -entry_batch accessions.txt -outfmt %t -out hitNames.txt 
+
+
